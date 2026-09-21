@@ -1,0 +1,31 @@
+<article class="blog-card">
+    <img
+        src="bilder/bildx.jpg"
+        alt="Beschreibung des Bildes"
+        class="card-image"
+    >
+
+    <div class="card-content">
+        <time datetime="2026-09-22">
+            22. September 2026
+        </time>
+
+        <h3>Meine neue Karte</h3>
+
+        <p class="short-description">
+            Diese kurze Beschreibung wird direkt auf der Karte angezeigt ...
+        </p>
+
+        <div class="full-description">
+            <p>
+                Hier steht die vollständige Beschreibung. Dieser Text wird
+                erst angezeigt, wenn der Besucher auf „Mehr erfahren“ klickt.
+                Du kannst hier beliebig viel Text schreiben.
+            </p>
+        </div>
+
+        <button class="more-button" type="button">
+            Mehr erfahren
+        </button>
+    </div>
+</article>

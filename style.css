@@ -1,0 +1,441 @@
+:root {
+    --pink: #e85d91;
+    --dark-pink: #c63d70;
+    --light-pink: #fff0f5;
+    --text: #29232a;
+    --muted: #716772;
+    --white: #ffffff;
+    --shadow: 0 12px 35px rgba(90, 32, 59, 0.12);
+    --radius: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+/* Navigation */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+}
+
+.navbar {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--dark-pink);
+    font-size: 1.35rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -6px;
+    left: 0;
+    height: 2px;
+    background: var(--pink);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--dark-pink);
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+/* Hero */
+
+.hero {
+    min-height: 520px;
+    display: grid;
+    place-items: center;
+    background:
+        linear-gradient(rgba(255, 240, 245, 0.82), rgba(255, 240, 245, 0.92)),
+        url("bilder/unterkunft-1.jpg") center / cover;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 760px;
+    padding: 80px 0;
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    color: var(--dark-pink);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+}
+
+h2 {
+    margin-bottom: 16px;
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+
+h3 {
+    margin: 8px 0 12px;
+    font-size: 1.35rem;
+}
+
+.hero-content > p:not(.eyebrow) {
+    max-width: 620px;
+    margin: 0 auto 28px;
+    color: var(--muted);
+    font-size: 1.08rem;
+}
+
+.primary-button,
+.more-button {
+    border: 0;
+    border-radius: 999px;
+    background: var(--pink);
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.primary-button {
+    display: inline-block;
+    padding: 13px 24px;
+    text-decoration: none;
+}
+
+.primary-button:hover,
+.more-button:hover {
+    background: var(--dark-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(198, 61, 112, 0.25);
+}
+
+/* Sections */
+
+.section {
+    padding: 90px 0;
+}
+
+.section-pink {
+    background: var(--light-pink);
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 36px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+}
+
+/* Karten */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 28px;
+}
+
+.blog-card {
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 42px rgba(90, 32, 59, 0.18);
+}
+
+.card-image {
+    width: 100%;
+    height: 220px;
+    display: block;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 24px;
+}
+
+.card-content time,
+.modal-date {
+    color: var(--dark-pink);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.short-description {
+    min-height: 78px;
+    color: var(--muted);
+}
+
+.full-description {
+    display: none;
+}
+
+.more-button {
+    margin-top: 18px;
+    padding: 11px 18px;
+}
+
+/* Zweispaltige Inhalte */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.two-column p + p {
+    margin-top: 16px;
+}
+
+.two-column > div:last-child {
+    color: var(--muted);
+}
+
+/* Modal */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(35, 17, 27, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    position: relative;
+    width: min(900px, 100%);
+    max-height: 92vh;
+    overflow: auto;
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    transform: translateY(20px) scale(0.96);
+    transition: transform 0.25s ease;
+}
+
+.modal.is-open .modal-box {
+    transform: translateY(0) scale(1);
+}
+
+.modal-image {
+    width: 100%;
+    height: min(52vh, 430px);
+    display: block;
+    object-fit: cover;
+}
+
+.modal-text {
+    padding: 30px;
+}
+
+.modal-title {
+    margin-top: 8px;
+}
+
+.modal-description {
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    z-index: 1;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--dark-pink);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* Footer */
+
+.footer {
+    margin-top: auto;
+    background: #2b2027;
+    color: #ffffff;
+}
+
+.footer-content {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer p:last-child {
+    color: #d8c7ce;
+}
+
+/* Tablet und Smartphone */
+
+@media (max-width: 700px) {
+    .container {
+        width: min(100% - 28px, 560px);
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 72px;
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 20px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.is-visible {
+        display: flex;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid #f3dce5;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 13px 0;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .footer-content {
+        min-height: 110px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-image {
+        height: 280px;
+    }
+
+    .modal-text {
+        padding: 24px 20px 28px;
+    }
+}

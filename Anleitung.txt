@@ -1,0 +1,44 @@
+Ein Eintrag enthält einen ein Bild, einer Kurzbeschreibung, um den Leser zu catchen und wenn auf "Mehr Erfahren" geklickt, eine anschließende detaillierte Vollbeschreibung.
+
+Um einen neuen Eintrag hinzuzufügen, muss der Inhalt aus der Datei "Neuer_Eintrag.txt" kopiert und angepasst werden.
+Die Datei dient als Mustervorlage und darf nicht verändert werden. Stattdessen öffne diese Datei, kopiere den gesamten Inhalt und füge es in eine neue Datei ein und passe diese neue Datei anschließend an.
+
+Dann kannst du den Code anpassen.
+
+Achte auf den Namen der Bilddatei, bspw. heißt deine Bilddatei "bild1.png", so muss im code an der Stelle src. stehen. Beispiel:
+"<article class="blog-card">
+    <img
+        src="bilder/bild1.png"
+"
+
+Für die Kurzbeschreibung, muss folgendes angepasst werden
+Beispiel:
+  <p class="short-description">
+          # # # # -->  Diese kurze Beschreibung wird direkt auf der Karte angezeigt ... <-- # # # # 
+       </p>
+
+Und für die detaillierte Beschreibung, muss dies angepasst werden.
+Du musst nur den Text anpassen, der Code also alles andere bleibt gleich.
+
+Beispiel:
+
+        <div class="full-description">
+            <p>
+                Hier steht die vollständige Beschreibung. Dieser Text wird
+                erst angezeigt, wenn der Besucher auf „Mehr erfahren“ klickt.
+                Du kannst hier beliebig viel Text schreiben.
+            </p>
+        </div>
+
+Vergleiche es mit den anderen für Bild1, Bild2 und Bild3.
+
+Anschließend kopiere den gesamten Inhalt deines Eintrages und füge es nach diesem Abschnitt ein in der Datei "index.html":
+ <!--
+                        Neue Karten einfach hier kopieren.
+                        Bild, Datum, Überschrift und Texte anpassen.
+                    -->
+
+Fertig.
+
+
+
